@@ -26,5 +26,14 @@ public class Team {
     private List<Car> cars;
 
     @OneToMany(mappedBy = "team")
-    private List<Driver> drivers;
+    private List<RacingDriver> drivers;
+
+
+    public Team(String name, int performanceRating, double pitStopAvg, double pitStopVariation, int strategyRating) {
+        this.name = name;
+        this.performanceRating = performanceRating;
+        this.pitStopAvg = pitStopAvg;
+        this.pitStopVariation = pitStopVariation;
+        this.strategyRating = strategyRating;
+    }
 }

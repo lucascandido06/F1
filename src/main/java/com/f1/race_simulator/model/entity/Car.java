@@ -26,4 +26,17 @@ public class Car {
 
     @ManyToOne
     private Team team;
+
+
+    public Car(String model, String engine, int powerUnitPerformance, int aerodynamics,
+               int chassisEfficiency, int reliability, int fuelEfficiency, Team team) {
+        this.model = model;
+        this.engine = engine;
+        this.powerUnitPerformance = powerUnitPerformance;
+        this.aerodynamics = aerodynamics;
+        this.chassisEfficiency = chassisEfficiency;
+        this.reliability = reliability;
+        this.fuelEfficiency = fuelEfficiency;
+        this.team = team;
+    }
 }

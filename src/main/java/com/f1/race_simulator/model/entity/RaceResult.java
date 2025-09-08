@@ -55,7 +55,7 @@ public class RaceResult {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "driver_id", nullable = false)
-    private Driver driver;
+    private RacingDriver driver;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "race_event_id", nullable = false)

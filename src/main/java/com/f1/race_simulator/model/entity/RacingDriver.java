@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Driver {
+@Table(name = "tb_drivers")
+public class RacingDriver {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +30,21 @@ public class Driver {
 
     @ManyToOne
     private Car car;
+
+
+    public RacingDriver(String name, String abbreviation, int number, int skillRating,
+                        int consistency, int overtaking, int defending, int rainSkill,
+                        int aggression, Team team, Car car) {
+        this.name = name;
+        this.abbreviation = abbreviation;
+        this.number = number;
+        this.skillRating = skillRating;
+        this.consistency = consistency;
+        this.overtaking = overtaking;
+        this.defending = defending;
+        this.rainSkill = rainSkill;
+        this.aggression = aggression;
+        this.team = team;
+        this.car = car;
+    }
 }

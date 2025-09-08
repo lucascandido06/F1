@@ -21,4 +21,12 @@ public class Tire {
     private int durability; // 1-100
     private int grip; // 1-100
     private int degradationRate;
+
+    public Tire(String compound, int durability, int grip, int degradationRate) {
+        this.compound = compound;
+        this.durability = durability;
+        this.grip = grip;
+        this.degradationRate = degradationRate;
+    }
+
 }

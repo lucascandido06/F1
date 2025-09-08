@@ -1,5 +1,6 @@
 package com.f1.race_simulator.repository;
 
+import com.f1.race_simulator.model.entity.RacingDriver;
 import com.f1.race_simulator.model.entity.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface DriverRepository extends JpaRepository<Driver, Long> {
+public interface DriverRepository extends JpaRepository<RacingDriver, Long> {
 
     Optional<Driver> findByName(String name);
 
@@ -23,15 +24,15 @@ public interface DriverRepository extends JpaRepository<Driver, Long> {
 
     List<Driver> findByTeamName(String teamName);
 
-    @Query("SELECT d FROM Driver d WHERE d.skillRating >= :minRating")
+    @Query("SELECT d FROM RacingDriver d WHERE d.skillRating >= :minRating")
     List<Driver> findByMinSkillRating(@Param("minRating") int minRating);
 
-    @Query("SELECT d FROM Driver d ORDER BY d.skillRating DESC")
+    @Query("SELECT d FROM RacingDriver d ORDER BY d.skillRating DESC")
     List<Driver> findAllOrderBySkillRating();
 
-    @Query("SELECT d FROM Driver d WHERE d.rainSkill >= :minRainSkill")
+    @Query("SELECT d FROM RacingDriver d WHERE d.rainSkill >= :minRainSkill")
     List<Driver> findBestRainDrivers(@Param("minRainSkill") int minRainSkill);
 
-    @Query("SELECT d FROM Driver d WHERE d.consistency >= :minConsistency")
+    @Query("SELECT d FROM RacingDriver d WHERE d.consistency >= :minConsistency")
     List<Driver> findByMinConsistency(@Param("minConsistency") int minConsistency);
 }

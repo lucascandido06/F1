@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "circuits")
+@Table(name = "tb_circuits")
 public class Circuit {
 
     @Id
@@ -57,4 +57,29 @@ public class Circuit {
 
     @Column(name = "tyre_degradation")
     private Integer tyreDegradation; // 1-100 (taxa de degradação de pneus)
+
+    public Circuit(String name, String country, Double lapLength, Integer laps,
+                   Double lapRecord, Double dryLapVariation, Double wetLapVariation,
+                   Integer overtakingDifficulty, Integer tyreDegradation) {
+        this.name = name;
+        this.country = country;
+        this.lapLength = lapLength;
+        this.laps = laps;
+        this.lapRecord = lapRecord;
+        this.dryLapVariation = dryLapVariation;
+        this.wetLapVariation = wetLapVariation;
+        this.overtakingDifficulty = overtakingDifficulty;
+        this.tyreDegradation = tyreDegradation;
+    }
+
+    public Circuit(String name, String country, Double lapLength, Integer laps,
+                   Double lapRecord, Double dryLapVariation, Double wetLapVariation) {
+        this.name = name;
+        this.country = country;
+        this.lapLength = lapLength;
+        this.laps = laps;
+        this.lapRecord = lapRecord;
+        this.dryLapVariation = dryLapVariation;
+        this.wetLapVariation = wetLapVariation;
+    }
 }

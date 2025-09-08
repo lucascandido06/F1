@@ -36,4 +36,4 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     @Query("SELECT c FROM Car c WHERE c.fuelEfficiency >= :minEfficiency")
     List<Car> findByMinFuelEfficiency(@Param("minEfficiency") int minEfficiency);
 }
-}
+
